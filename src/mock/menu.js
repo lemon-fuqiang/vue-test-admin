@@ -1,5 +1,5 @@
-//模拟数据
-const  menu= [
+//模拟目录数据
+const menu = [
     {
         path: '/',
         name: 'home',
@@ -59,10 +59,10 @@ const  menu= [
 ]
 export default {
     "get|/menu/menuList": option => {
-      return {
-        status: 200,
-        message: "success",
-        data: menu
-      };
+        return {
+            status: 200,
+            message: "success",
+            data: menu
+        };
     }
-  };
+};

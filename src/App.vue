@@ -1,23 +1,21 @@
 <template>
   <div id="app">
-    <layout></layout>
+    <router-view></router-view>
   </div>
 </template>
 <script>
-import layout from './Layout/index.vue'
+
 export default {
-  name: 'app',
-  components: {layout},
-  data () {
-    return {}
+  name: "app",
+  components: {},
+  data() {
+    return {};
   },
-  created () {
-  },
+  created() {},
   computed: {},
   methods: {},
-  mounted () {
-  }
-}
+  mounted() {},
+};
 </script>
 
 <style lang="scss" scoped>

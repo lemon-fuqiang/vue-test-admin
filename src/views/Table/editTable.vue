@@ -1,9 +1,11 @@
 <template>
-  <div></div>
+  <div>
+    editTable
+  </div>
 </template>
 <script>
 export default {
-  name: 'about',
+  name: '',
   components: {},
   data () {
     return {}

@@ -5,24 +5,25 @@
     </div>
     <div class="right">
       <headers />
-      <main-content />
+      <div class="mainContent">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
 <script>
-import headers from "./headers.vue";
-import navbar from "./navbar.vue";
-import mainContent from "./mainContent.vue";
+import headers from "./component/headers.vue";
+import navbar from "./component/navbar.vue";
 export default {
   name: "layout",
-  components: { headers, navbar, mainContent },
+  components: { headers, navbar },
   data() {
     return {};
   },
-  created() { },
+  created() {},
   computed: {},
   methods: {},
-  mounted() { },
+  mounted() {},
 };
 </script>
 
@@ -33,7 +34,7 @@ export default {
 
 .left {
   height: 100vh;
-  background-color: #787f87;
+  background-color: #545c64;
 }
 
 .right {

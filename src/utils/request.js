@@ -2,7 +2,7 @@ import axios from "axios";
 import { Message,MessageBox } from "element-ui";
 import { remove } from "js-cookie";
 import store from "../store";
-import getToken from './token';
+// import getToken from './token';
 
 //创建一个axios实例
 const service = axios.create({
@@ -31,7 +31,7 @@ service.interceptors.response.use(
   response=>{
     const res=response.data;
     //错误返回判断
-    if(res.code!==200){
+    if(res.status!==200){
       Message({
         message:res.message || 'Error',
         type:'error',
@@ -49,6 +49,7 @@ service.interceptors.response.use(
         })
       }
     }
+    return res
   },
   error=>{
     console.log('err'+error);

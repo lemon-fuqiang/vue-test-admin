@@ -1,9 +1,11 @@
 <template>
-  <div></div>
+  <div>
+    sortTable
+  </div>
 </template>
 <script>
 export default {
-  name: 'demo',
+  name: '',
   components: {},
   data () {
     return {}

@@ -1,11 +1,9 @@
 <template>
-  <div class="mainContent">
-    <router-view />
-  </div>
+  <div>home</div>
 </template>
 <script>
 export default {
-  name: 'mainContent',
+  name: '',
   components: {},
   data () {
     return {}
@@ -20,7 +18,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .mainContent{
-    width: 100%;
-  }
+
 </style>
