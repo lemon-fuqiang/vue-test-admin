@@ -1,18 +1,30 @@
 <template>
-  <div>home</div>
+  <div class="home">
+    <div class="cardBox" v-for="item in cardData" :key="item.id">
+      <!-- <card :cardItem="item"></card> -->
+    </div>
+  </div>
 </template>
 <script>
+import card from './component/card.vue'
+
+import {getCards} from '../../utils/homeApi'
 export default {
   name: '',
-  components: {},
+  components: {card},
   data () {
-    return {}
+    return {
+      cardData:[]
+    }
   },
   created () {
   },
   computed: {},
   methods: {},
   mounted () {
+    getCards().then(res=>{
+      this.cardData=res.data
+    })
   }
 }
 </script>

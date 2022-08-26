@@ -24,14 +24,14 @@ const menu = [
                 name: 'sortTable',
                 label: '表单排序',
                 icon: 'sorttable',
-                url: 'table/sortTable',
+                url: '/sortTable',
             },
             {
                 path: '/editTable',
                 name: 'editTable',
                 label: '表单编辑',
                 icon: 'editTable',
-                url: 'table/editTable',
+                url: '/editTable',
             },
         ]
     },

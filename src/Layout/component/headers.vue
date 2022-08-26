@@ -1,14 +1,14 @@
 <template>
   <div class="header">
-    <div style="position:absolute;top:15px;left:15px">
-      <el-button plain icon="el-icon-menu" size="mini"  @click="toggleMenu()"></el-button>
+    <div style="position:absolute;top:10px;left:15px">
+      <el-button type="info" icon="el-icon-menu" size="mini"  @click="changeMenu()"></el-button>
     </div>
     <div class="breadcrumb">
       首页
     </div>
     <div class="userLogo">
       <el-dropdown>
-        <el-avatar :size="40" :src="url"
+        <el-avatar :size="35" :src="url"
           icon="el-icon-user-solid"
           class="el-dropdown-link"
         ></el-avatar>
@@ -31,6 +31,8 @@
   </div>
 </template>
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   name: "demo",
   components: {},
@@ -42,10 +44,7 @@ export default {
   created() {},
   computed: {},
   methods: {
-    toggleMenu(){
-      console.log(this.$store.tab);
-      this.$store.commit('collapseMenu');
-    }
+    ...mapMutations('tab',['changeMenu']),
   },
   mounted() {
     
@@ -56,14 +55,14 @@ export default {
 <style lang="scss" scoped>
 .header {
   position: relative;
-  height: 60px;
+  height: 50px;
   width: 100%;
   border-bottom: 1px solid #ccc;
   background-color: rgb(17, 16, 16);
   color: #fff;
   .userLogo {
     position: absolute;
-    top: 10px;
+    top: 8px;
     right: 50px;
     .el-dropdown-link {
       cursor: pointer;
@@ -76,7 +75,7 @@ export default {
   .breadcrumb{
     position: absolute;
     cursor: pointer;
-    top: 20px;
+    top: 15px;
     left: 80px;
   }
 }

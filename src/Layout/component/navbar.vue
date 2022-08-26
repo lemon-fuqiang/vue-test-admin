@@ -8,7 +8,7 @@
     :collapse="iscollapse"
   >
     <h3 v-show="!iscollapse">通用后台管理系统</h3>
-    <h3 v-show="iscollapse">系统</h3>
+    <div id="logo" v-show="iscollapse"><img class="logo" src="@/assets/logo.png" alt=""></div>
     
     <el-menu-item  @click="menuItemClick(item)"
       v-for="item in noChildren"
@@ -24,7 +24,7 @@
         <span>{{ item.label }}</span>
       </template>
       <el-menu-item-group v-for="subItem in item.child" :key="subItem.path">
-        <el-menu-item :index="subItem.name" @click="menuItemClick(item)">
+        <el-menu-item :index="subItem.name" @click="menuItemClick(subItem)">
           {{ subItem.label }}
         </el-menu-item>
       </el-menu-item-group>
@@ -32,8 +32,9 @@
   </el-menu>
 </template>
 <script>
+import {mapState,mapMutations} from 'vuex'
 
-import {getMenu} from "../../utils/api";
+import {getMenu} from "../../utils/menuApi";
 export default {
   name: "navbar",
   components: {},
@@ -52,13 +53,12 @@ export default {
     },
     iscollapse(){
       return this.$store.iscollapse;
-    }
+    },
+    ...mapState('tab',['iscollapse']),
   },
   methods: {
-    menuItemClick:function(item){
-      this.$router.push({
-        name:item.name
-      })
+    menuItemClick(item){
+      this.$router.push({name:item.name})
     }
   },
   mounted() {
@@ -85,5 +85,14 @@ export default {
 }
 .mgr-10 {
   margin-right: 10px;
+}
+#logo{
+   padding-top:10px;
+   text-align:center
+}
+.logo{
+  height: 30px;
+  width: 30px;
+  background-size: 100%;
 }
 </style>
